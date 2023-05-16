@@ -1,0 +1,88 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New';
+}
+
+body{
+  background-color: var(--bg-color);
+}
+
+ion-icon{
+  cursor: pointer;
+  font-size: 26px;
+  color: var(--text-color);
+  --ionicon-stroke-width: 26px;
+}
+
+:root .light-mode{
+  --bg-color: #fff;
+  --text-color: #000;
+
+}
+
+:root .dark-mode{
+  --bg-color: #000;
+  --text-color: #fff;
+}
+
+.noactive{
+  display: none;
+}
+.active{
+  display: block;
+}
+
+
+.container__header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 10vh;
+}
+.container__nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+.nav__item{
+  color: var(--text-color);
+  margin: 0px 50px 0px 0px;
+}
+
+#btnDarkmode{
+  position: absolute;
+  right: 50px;
+  padding: 5px;
+  background-color: var(--btn-bgcolor);
+  border: none;
+}
+
+#btnMenu{
+  position: absolute;
+  left: 50px;
+  display: none;
+}
+
+@media (max-width: 768px){
+  .container__nav{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: left;
+      width: 100vw;
+      height: 20vh;
+  }
+  .nav__item{
+    display: none;
+    text-align: left;
+  }
+  #btnMenu{
+    display: block;
+  }
+}
