@@ -1,16 +1,14 @@
-let btnDarkMode = document.getElementById("btnDarkmode");
-let btnSun = document.getElementById("sunIcon");
-let btnMoon = document.getElementById("moonIcon");
-let body = document.getElementById("body");
 let nav = document.getElementById("nav");
-let navItem = document.getElementsByClassName("nav__item");
+let navItem = document.querySelectorAll(".nav__item");
 
 function switchDarkMode(){
+  let btnSun = document.getElementById("sunIcon");
+  let btnMoon = document.getElementById("moonIcon");
   btnSun.classList.toggle('active')
   btnMoon.classList.toggle('noactive')
   body.classList.toggle('dark-mode')
 }
 
-function openHeader(){
-  navItem.classList.toggle('active')
+function openMenuHeader(){
+  navItem.classList.toggle('active');
 }
