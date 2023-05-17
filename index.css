@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Courier New';
-  outline: 1px dashed var(--text-color);
+  font-family: Calibri;
+  /* outline: 1px dashed var(--text-color); */
 }
 
 body{
@@ -20,12 +20,15 @@ ion-icon{
 :root .light-mode{
   --bg-color: #fff;
   --text-color: #000;
-
+  --shadow-color: #00000030;
+  --bg-cards-color: #e7e7e7;
 }
 
 :root .dark-mode{
   --bg-color: #000;
   --text-color: #fff;
+  --shadow-color: #ffffff60;
+  --bg-cards-color: #2b2b2b;
 }
 
 .noactive{
@@ -44,17 +47,23 @@ ion-icon{
   justify-content: center;
   width: 100vw;
   height: 10vh;
+  box-shadow: 0px 0px 10px 0px var(--shadow-color);
 }
 .container__nav{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: left;
   width: 100%;
   height: 100%;
 }
 .nav__item{
+  text-decoration: none;
+  transition: all .1s;
   color: var(--text-color);
-  margin: 0px 50px 0px 0px;
+  margin: 0px 0px 0px 50px;
+}
+.nav__item:hover{
+  text-decoration: underline;
 }
 
 @keyframes pop_Anim {
@@ -69,21 +78,75 @@ ion-icon{
 #btnDarkmode{
   cursor: pointer;
   animation: pop_Anim .2s ease-in-out;
-  transition: .2s all ease-in-out;
+  transition: .2s all;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   right: 30px;
-  padding: 5px 5px;
+  border-radius: 50px;
   background-color: var(--btn-bgcolor);
   border: none;
+
+}
+#btnDarkmode:hover ion-icon{
+  color: rgb(255, 217, 0);
+}
+
+#btnDarkmode:hover{
+  color: yellow;
+  transform: scale(0.9);
 }
 
 #btnMenu{
   position: absolute;
   left: 30px;
   display: none;
+}
+
+
+
+.section__about{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px 20px;
+  border-bottom: solid 2px var(--bg-cards-color);
+}
+
+.card__about{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px 30px;
+  border-radius: 10px;
+
+  color: var(--text-color);
+  background-color: var(--bg-cards-color);
+  box-shadow: 2px 2px 5px 0px var(--shadow-color);
+
+}
+
+.img__pessoa{
+  width: 500px;
+  filter: drop-shadow( 0px 0px 0px 3px #0000);
+}
+
+.title__about{
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  font-size: 30px;
+  margin: 0px 0px 20px 0px;
+}
+
+.section__projects{
+  width: 100vw;
+  height: 100vh;
 }
 
 @media (max-width: 568px){
@@ -103,4 +166,10 @@ ion-icon{
   #btnMenu{
     display: block;
   }
+  .card__about{
+    width: 90%;
+    height: 80%;
+  }
 }
+
+
