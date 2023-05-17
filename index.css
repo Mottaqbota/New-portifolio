@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Courier New';
+  outline: 1px dashed var(--text-color);
 }
 
 body{
@@ -13,7 +14,7 @@ ion-icon{
   cursor: pointer;
   font-size: 26px;
   color: var(--text-color);
-  --ionicon-stroke-width: 26px;
+  --ionicon-stroke-width: 18px;
 }
 
 :root .light-mode{
@@ -54,21 +55,36 @@ ion-icon{
   margin: 0px 50px 0px 0px;
 }
 
+@keyframes pop_Anim {
+  0% {
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
 #btnDarkmode{
+  cursor: pointer;
+  animation: pop_Anim 1s ease-in-out;
+  transition: 1s all ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  right: 50px;
-  padding: 5px;
+  right: 30px;
+  padding: 5px 5px;
   background-color: var(--btn-bgcolor);
   border: none;
 }
 
 #btnMenu{
   position: absolute;
-  left: 50px;
+  left: 30px;
   display: none;
 }
 
-@media (max-width: 768px){
+@media (max-width: 568px){
   .container__nav{
       display: flex;
       align-items: center;
