@@ -29,10 +29,12 @@ ion-icon{
 }
 
 .noactive{
+  animation: pop_Anim .1s ease-in-out;
   display: none;
 }
 .active{
-  display: block;
+  animation: pop_Anim .1s ease-in-out;
+  display: flex;
 }
 
 
@@ -57,7 +59,7 @@ ion-icon{
 
 @keyframes pop_Anim {
   0% {
-    transform: scale(0);
+    transform: scale(0.5);
   }
   100%{
     transform: scale(1);
@@ -66,8 +68,8 @@ ion-icon{
 
 #btnDarkmode{
   cursor: pointer;
-  animation: pop_Anim 1s ease-in-out;
-  transition: 1s all ease-in-out;
+  animation: pop_Anim .2s ease-in-out;
+  transition: .2s all ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
